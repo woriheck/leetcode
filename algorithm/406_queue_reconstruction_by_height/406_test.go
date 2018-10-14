@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAllPathsSourceTarget(t *testing.T) {
+func TestReconstructQueue(t *testing.T) {
 	assert := assert.New(t)
 
 	dataset := [][][]int{
@@ -19,6 +19,6 @@ func TestAllPathsSourceTarget(t *testing.T) {
 
 	for index := range dataset {
 		path := reconstructQueue(dataset[index])
-		assert.Equal(path, expected[index], "not correct.")
+		assert.Equal(path, expected[index], "Not correct.")
 	}
 }

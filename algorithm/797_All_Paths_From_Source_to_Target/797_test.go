@@ -23,6 +23,6 @@ func TestAllPathsSourceTarget(t *testing.T) {
 
 	for index := range dataset {
 		path := allPathsSourceTarget(dataset[index])
-		assert.Equal(path, expected[index], "Path not correct.")
+		assert.Equal(path, expected[index], "Not correct.")
 	}
 }

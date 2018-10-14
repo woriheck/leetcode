@@ -21,6 +21,6 @@ func TestSpiralMatrixIII(t *testing.T) {
 
 	for index := range dataset {
 		path := spiralMatrixIII(dataset[index][0], dataset[index][1], dataset[index][2], dataset[index][3])
-		assert.Equal(path, expected[index], "Path not correct.")
+		assert.Equal(path, expected[index], "Not correct.")
 	}
 }

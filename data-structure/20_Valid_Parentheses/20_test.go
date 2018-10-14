@@ -19,6 +19,6 @@ func TestIsValid(t *testing.T) {
 
 	for _, data := range dataset {
 		valid := isValid(data)
-		assert.True(valid, "Parentheses should be true.")
+		assert.True(valid, "Not correct.")
 	}
 }
