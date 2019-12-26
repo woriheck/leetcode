@@ -1,24 +1,21 @@
-package main
+package peak
 
-func findPeakIndex(nums []int, start int, end int) int {
-	r := end - start
-	center := start + (r / 2) + (r % 2)
-
+func search(nums []int, start int, end int) int {
 	if start == end {
 		return start
 	}
 
-	if nums[center] < nums[center-1] {
-		return findPeakIndex(nums, start, center-1)
-	} else if center == end {
-		return center
-	} else if nums[center] < nums[center+1] {
-		return findPeakIndex(nums, center+1, end)
-	} else {
-		return center
+	center := (start + end) / 2
+
+	// Look to the left
+	if nums[center] > nums[center+1] {
+		return search(nums, start, center)
 	}
+
+	// Look to the right
+	return search(nums, center+1, end)
 }
 
 func findPeakElement(nums []int) int {
-	return findPeakIndex(nums, 0, len(nums)-1)
+	return search(nums, 0, len(nums)-1)
 }
